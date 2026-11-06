@@ -86,7 +86,7 @@ and 'Noto Serif SC' for 'Noto Serif TC' in --font below. */
 
 /* background */
 --bg-base: #A9BDAE;
---bg-image: url('https://aurorastudioswork-sketch.github.io/NEW.csslio/temple-bg.jpg');
+--bg-image: url('https://i.pinimg.com/1200x/04/39/df/0439df5071b80948920a2280aed00583.jpg');
 --bg-blur: 5px;       /* raise for softer, 0px for none */
 --bg-dim: 1.12;       /* 1 = original brightness, lower = darker, higher = brighter */
 --bg-haze: rgba(240, 246, 241, 0.30);   /* pale mist over the photo, 0 for none */
@@ -107,8 +107,11 @@ The photo sits on its own fixed layer behind the page so it can be blurred
 without blurring anything else. The layer is a little oversized so the
 blur doesn't leave soft edges. Phones use the same image. */
 
+html {
+background: var(--bg-base) var(--bg-image) center center / cover no-repeat fixed !important; }
+
 body {
-background: var(--bg-base) !important; }
+background: transparent !important; }
 
 body::before {
 content: "";
