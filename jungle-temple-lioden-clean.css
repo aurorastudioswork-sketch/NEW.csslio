@@ -1,515 +1,317 @@
-/* jester and katie's free css template -
-made based off of katie's v2 free css template / should be considered v3
-
-you can use this for commissions, for personal use, etc.
-please do not remove the credit of all the users who went into this, though.
-
+/* jester and katie's free css template - v3
 template made by jester (#187561) & katie (#106445)
+you can use this for commissions, for personal use, etc.
+please do not remove the credit of all the users who went into this.
 
-below is a list of ids credited with other pieces/inspiration for various things in this template
-Pandora #144118
-Kat  #94329
-tawny #251887
-Austin #43750 
-Bobcat (#79288)
-Tserin (#2230)
-Atticus (#198107)
+credited for pieces/inspiration:
+Pandora #144118, Kat #94329, tawny #251887, Austin #43750,
+Bobcat (#79288), Tserin (#2230), Atticus (#198107)
 
-=========================================================
-THEME: Jungle Temple / Heron
+THEME: Heron's Rest - pale sage glass over a misty forest
+
 PALETTE
-  #3E4636  deep moss (darkest text)
-  #5A6249  forest olive
-  #787A65  stone olive
-  #808C61  moss green
-  #627571  misty slate
+  #3E4636  deep moss (main text)
+  #4F5A49  dark olive (headings)
+  #627571  misty slate (accent)
+  #808C61  moss (bars)
   #ABC4B4  sage
-  #E3EDE5  pale mint (paper)
-  #2F4560  heron ink blue (accent)
-  #C9A94E  heron beak gold (accent)
-  #8A6A4A  temple roof brown (accent)
+  #C9DACD  pale sage (panels)
+  #E3EDE5  pale mint (highlights)
+  #C9A94E  heron gold (energy, badges)
+  #8A6A4A  temple brown (hunger, warnings)
 
-FONTS
-  Latin text uses Cormorant Garamond / Cinzel.
-  Chinese characters automatically fall back to Noto Serif SC
-  (and ZCOOL XiaoWei for headers), so mixed text looks matched.
-  For Traditional characters, swap "Noto Serif SC" for "Noto Serif TC"
-  in both the import link and the font lists.
-========================================================= */
- 
-/* FONTS - Import from Google Fonts */
- 
-@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Noto+Serif+SC:wght@400;600&family=ZCOOL+XiaoWei&display=swap');
- 
-body {
-font-family: 'Cormorant Garamond', 'Noto Serif SC', serif;
-font-size: 15px;
-line-height: 1.6; }
- 
-.topbar {font-family: 'Cinzel', 'Noto Serif SC', serif;}
- 
-.navbar {font-family: 'Cinzel', 'Noto Serif SC', serif;}
+FONT
+  Classic serif like the reference (Georgia / Times).
+  Chinese characters fall back to Noto Serif SC.
+*/
 
-/* BACKGROUNDS 
-Currently a misty forest gradient so it works with no image.
-To use a photo (like the temple), rehost it and replace the desktop background line with:
-background: #3E4636 url('IMG LINK') center center fixed;
-and change background-size to cover */
- 
-@media screen and (min-width: 601px) { 
-body {
-background: linear-gradient(180deg, #627571 0%, #5A6249 45%, #3E4636 100%) fixed;
-background-size: 100%;
-color: #3E4636; } }
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&display=swap');
 
-@media screen and (max-width: 600px){
+body, .topbar, .navbar, input, textarea, select, button {
+font-family: Georgia, 'Times New Roman', 'Noto Serif SC', serif !important; }
+
 body {
-background: #5A6249;
+font-size: 14px;
+line-height: 1.5; }
+
+/* BACKGROUND
+To use a photo, upload it to your GitHub repo and swap the desktop line for:
+background: #4F5A49 url('https://aurorastudioswork-sketch.github.io/NEW.csslio/YOURIMAGE.jpg') center center fixed;
+and set background-size: cover; */
+
+@media screen and (min-width: 601px) {
+body {
+background: linear-gradient(180deg, #8FA597 0%, #6E8170 40%, #4F5A49 100%) fixed;
 background-size: cover;
 color: #3E4636; } }
 
-/* SCROLL BOXES */
- 
-::-webkit-scrollbar {
-width: 7px;
-height: 7px; }
-::-webkit-scrollbar-track {
-background: #E3EDE5;}
-::-webkit-scrollbar-thumb {
-background: #808C61; } 
- 
-/* HEADERS -
-H1 is the big header that says 'X's Den'
-H2 is not used anywhere in the default look unless you want to use it.
-H3 is used in the side bar (above the energy panel, achievement panel, etc. */
- 
+@media screen and (max-width: 600px) {
+body {
+background: #6E8170;
+color: #3E4636; } }
+
+/* SCROLLBARS */
+
+::-webkit-scrollbar { width: 7px; height: 7px; }
+::-webkit-scrollbar-track { background: #C9DACD; }
+::-webkit-scrollbar-thumb { background: #808C61; }
+
+/* HEADERS */
+
 h1 {
-color: #5A6249 !important;
-font-size: 56px;
+color: #4F5A49 !important;
+font-size: 72px;
+font-weight: normal;
 text-align: center !important;
-font-family: 'Cinzel', 'ZCOOL XiaoWei', 'Noto Serif SC', serif;
-letter-spacing: 2px;}
+font-family: Georgia, 'Times New Roman', 'Noto Serif SC', serif !important; }
 
 h2 {
-color: #2F4560 !important;
+color: #4F5A49 !important;
 font-size: 24px;
-font-family: 'Cinzel', 'ZCOOL XiaoWei', 'Noto Serif SC', serif;}
+font-weight: normal; }
 
 h3 {
-color: #5A6249 !important;
-font-size: 18px;
-font-family: 'Cinzel', 'ZCOOL XiaoWei', 'Noto Serif SC', serif;}
- 
-/* LINKS
-Color of links. This will affect all links on your page.
-Links on the dark bars are overridden further down so they stay readable. */
- 
-a:link,
-a:visited {
-color: #2F4560 !important;
+color: #4F5A49 !important;
+font-size: 24px;
+font-weight: normal; }
+
+/* LINKS */
+
+a:link, a:visited {
+color: #3E4636 !important;
 background: none !important; }
-   
+
 a:hover {
-color: #8A6A4A !important; }
- 
-/* MAIN PANEL - The panel in front of your background image.
-Pale mint "paper" with a faint rice-paper texture. */
-   
+color: #627571 !important; }
+
+/* MAIN PANEL - translucent so the background shows through */
+
 .container.main {
-background-color: rgba(227, 237, 229, 0.94);
-background-image: url("https://www.transparenttextures.com/patterns/rice-paper-2.png");
-border: none;
-box-shadow: 0 0 40px rgba(30, 36, 26, 0.45);
-border-radius: 5px; }
-.col-md-9 {
-background: none; } 
- 
-/* TOPBAR, NAVBAR, & BREADCRUMB */
- 
+background: rgba(201, 218, 205, 0.55);
+border: 1px solid rgba(227, 237, 229, 0.6);
+box-shadow: none;
+border-radius: 0px; }
+.col-md-9 { background: none; }
+
+/* TOPBAR, NAVBAR, BREADCRUMB */
+
 .topbar {
-background: #3E4636 !important;
-color: #E3EDE5 !important;
+background: rgba(171, 196, 180, 0.75) !important;
+color: #3E4636 !important;
 border: none !important;
-border-radius: 0px !important;  }
- 
+border-radius: 0px !important;
+font-size: 13px; }
+
 .navbar {
-background: #5A6249 !important;
-color: #E3EDE5 !important;
+background: rgba(171, 196, 180, 0.65) !important;
+color: #3E4636 !important;
 border: none !important;
 border-radius: 0px !important; }
 
-.topbar a:link, .topbar a:visited,
-.navbar a:link, .navbar a:visited {
-color: #E3EDE5 !important; }
+.navbar li a {
+font-size: 17px !important;
+font-weight: bold !important;
+text-transform: uppercase;
+letter-spacing: 1px; }
 
 .navbar li a:hover {
-background: #808C61 !important;
-color: #C9A94E !important; }
-
-/* mobile collapsible navbar */
+background: rgba(227, 237, 229, 0.5) !important;
+color: #4F5A49 !important; }
 
 .navbar-toggle {
 border: none !important;
-background: #5A6249 !important;
-}
-
-.navbar-toggle .icon-bar {
-background: #E3EDE5 !important; }
-
+background: rgba(171, 196, 180, 0.65) !important; }
+.navbar-toggle .icon-bar { background: #3E4636 !important; }
 .navbar-collapse {
 box-shadow: none !important;
-border-top: none !important;
-}
-
- 
-/* Bookmark Bar - aka breadcrumb */
+border-top: none !important; }
 
 .breadcrumb {
-background: #627571 !important;
-color: #E3EDE5 !important;
-border: none !important;
-border-radius: 0px !important;} 
-.breadcrumb a:link, .breadcrumb a:visited {
-color: #E3EDE5 !important; }
-.breadcrumb .active {
-color: #C9A94E; }
- 
-/* ALERTS */
- 
-.alert {
-background: #ABC4B4 !important;
+background: rgba(201, 218, 205, 0.6) !important;
 color: #3E4636 !important;
-border: none !important;
-border-radius: 0px !important;
-text-align: center !important;  }
-.alert-warning {
-background: #8A6A4A !important;
-color: #E3EDE5 !important;}
-.alert-danger {
-background: #8A6A4A !important;
-color: #E3EDE5 !important;}
-.alert-success {
-background: #808C61 !important;
-color: #E3EDE5 !important;}
-.alert-warning a:link, .alert-warning a:visited,
-.alert-danger a:link, .alert-danger a:visited,
-.alert-success a:link, .alert-success a:visited {
-color: #F2E3B3 !important; }
- 
+border: 1px solid rgba(227, 237, 229, 0.5) !important;
+border-radius: 0px !important; }
+.breadcrumb .active { color: #4F5A49; }
 
-/*COMMENT BOX 
-div#commentBox is the whole box; .comment is the comments themselves.
-.comment is left without a background so the alternating shades show. */
+/* ALERTS */
+
+.alert, .alert-success, .alert-warning, .alert-danger {
+background: rgba(201, 218, 205, 0.6) !important;
+color: #3E4636 !important;
+border: 1px solid rgba(227, 237, 229, 0.6) !important;
+border-radius: 0px !important;
+text-align: center !important; }
+.alert-warning, .alert-danger {
+background: rgba(138, 106, 74, 0.35) !important; }
+
+/* COMMENT BOX */
 
 div#commentBox {
-background: #E3EDE5 !important;
-border: none !important;
+background: rgba(201, 218, 205, 0.6) !important;
+border: 1px solid rgba(227, 237, 229, 0.5) !important;
 border-radius: 0px !important;
-color: #3E4636 !important;}
-	
-.comment {     
-border: none !important;
-border-bottom: none !important;
-border-radius: 0px !important;
-color: #3E4636 !important;
-text-align: center !important;}
-.text-muted { 
-color: #787A65 !important; }
-
-input.bad {
-background: #8A6A4A !important;
-color: #E3EDE5 !important;}
-input.bad a {
-color: #E3EDE5 !important; }
-
-table#player.table hr {
-display: none !important; }
-table#player.table div.xlarge { 
-margin-top: 10px !important; }
-
- 
-/* SIDE PANELS */
- 
-.panel {
-background-color: #EEF3EE !important;
-background-image: url("https://www.transparenttextures.com/patterns/rice-paper-2.png") !important;
-color: #3E4636 !important;
-border: none !important;
-border-left: 3px solid #ABC4B4 !important;
-border-radius: 0px !important;
-box-shadow: none !important;  }
-   
-/* PROGRESS BARS */
-.progress-bar {
-background: #627571 !important; 
-border-radius: 0px !important; }
-
-/* ENERGY */ .progress-bar-warning { 
-background: #C9A94E !important;
-color: #3E4636 !important;}
-/* HUNGER */ .progress-bar-danger { 
-background: #8A6A4A !important;
-color: #E3EDE5 !important;}
-/* EXP + ACHIEVEMENTS */ .progress-bar-success { 
-background: #808C61 !important;
-color: #E3EDE5 !important;}
-
-/* This is the text that reads Energy: X% */
-.progress div {
 color: #3E4636 !important; }
 
-/* This is the background of the progress bars. */
-.progress {
-background:  #ABC4B4;
+.comment {
+border: none !important;
+border-radius: 0px !important;
 color: #3E4636 !important;
-border-radius: 0px !important;  }
+text-align: center !important; }
+.text-muted { color: #627571 !important; }
 
-/* Icon Replacement - Warning (uncomment and add a link to use)
-img[src$="icon_warning.png"] {
-content: url('imagelink') !important;
-width: 24px !important; } */
- 
+input.bad { background: #8A6A4A !important; color: #E3EDE5 !important; }
+input.bad a { color: #E3EDE5 !important; }
+
+table#player.table hr { display: none !important; }
+table#player.table div.xlarge { margin-top: 10px !important; }
+
+/* SIDE PANELS */
+
+.panel {
+background: rgba(201, 218, 205, 0.6) !important;
+color: #3E4636 !important;
+border: 1px solid rgba(227, 237, 229, 0.6) !important;
+border-radius: 0px !important;
+box-shadow: none !important; }
+
+/* PROGRESS BARS */
+
+.progress {
+background: rgba(227, 237, 229, 0.8);
+color: #3E4636 !important;
+border-radius: 0px !important; }
+.progress-bar { background: #808C61 !important; border-radius: 0px !important; }
+.progress-bar-warning { background: #C9A94E !important; }
+.progress-bar-danger { background: #8A6A4A !important; }
+.progress-bar-success { background: #808C61 !important; }
+.progress div { color: #3E4636 !important; }
+
 /* CHAT */
 
 button#label_currentChannel {
 border: none !important;
-background: #5A6249 !important;
-color: #E3EDE5 !important; }
-
-div#chatMessageContainer {
-border: none !important; }
-
-/* PINNED MESSAGES */
+background: rgba(171, 196, 180, 0.8) !important;
+color: #3E4636 !important; }
+div#chatMessageContainer { border: none !important; }
 
 .s-chat-message__pinned {
-background-color: #627571 !important;
-color: #E3EDE5 !important;
+background-color: rgba(171, 196, 180, 0.8) !important;
+color: #3E4636 !important;
 border: none !important; }
+.s-chat-message:nth-child(even) { background: rgba(227, 237, 229, 0.55) !important; border: none !important; }
+.s-chat-message:nth-child(odd) { background: rgba(201, 218, 205, 0.55) !important; border: none !important; }
+.s-chat-message_timestamp { color: #627571 !important; }
 
-.s-chat-message:nth-child(even) {
-background: #E3EDE5 !important;
-border: none !important; }
-.s-chat-message:nth-child(odd) {
-background: #D3E1D6 !important;
-border: none !important; }
-
-.s-chat-message_timestamp {
-color: #787A65 !important; }
-
-/* Channel Selector */ 
 .s-chat-sidebar #fraChatChannelMenu,
 button.channelSwitcher, button.channelSwitcher.active {
-background: #5A6249 !important;
-color: #E3EDE5 !important;	
+background: rgba(171, 196, 180, 0.8) !important;
+color: #3E4636 !important;
 border: none !important;
 border-radius: 0px !important;
 box-shadow: none !important; }
 
-/* Emote List */
-
 div.emoteList.active {
 background: #E3EDE5 !important;
 border: 1px solid #ABC4B4 !important;
-box-shadow: none !important;
-}
+box-shadow: none !important; }
 div.emoteList.active::before {
 background: #E3EDE5;
 border: 1px solid #ABC4B4 !important;
 border-top: none !important; }
 
-/* Pinged messages */
-	
 #chatMessageList[data-pings="enabled"] .s-chat-message_mention {
-background-color: #F2E9C9 !important;
-border-left: 6px solid #C9A94E !important;
+background-color: rgba(201, 169, 78, 0.25) !important;
+border-left: 4px solid #C9A94E !important;
 color: #3E4636 !important; }
 
-/* Character counter X/150 */
-
-div#lblCharacterCounter {
-color: #787A65 !important; }
+div#lblCharacterCounter { color: #627571 !important; }
 
 /* do NOT touch */
-html.nolayout {
-background: none !important; }
+html.nolayout { background: none !important; }
 
-/* FAPA, KING DYNASTY, ETC. */
- 
+/* DYNASTY / ACHIEVEMENT / SHOWCASE BOXES AND BUTTONS */
+
 .feature {
-background: #E3EDE5 !important;
+background: rgba(201, 218, 205, 0.6) !important;
 color: #3E4636 !important;
-border: 3px double #808C61 !important;
-border-radius: 0px !important;  }
-
-div.left {
-background: #ABC4B4 !important;
-color: #3E4636 !important;
-border: none !important;
+border: 1px solid rgba(227, 237, 229, 0.6) !important;
 border-radius: 0px !important; }
 
-.xsmall {
-font-size: 14px !important; }
- 
-/* LION INFO */
- 
+div.left {
+background: rgba(201, 218, 205, 0.6) !important;
+color: #3E4636 !important;
+border: 1px solid rgba(227, 237, 229, 0.6) !important;
+border-radius: 0px !important; }
+
+.xsmall { font-size: 14px !important; }
+
+/* LION INFO TABLES */
+
 .table {
-background: rgba(0, 0, 0, 0.0);
-border: none !important;
+background: rgba(201, 218, 205, 0.45);
+border: 1px solid rgba(227, 237, 229, 0.6) !important;
 border-collapse: separate;
 border-radius: 0px; }
 
 .top, .bottom, th {
-background: #627571 !important;
-color: #E3EDE5 !important;
-border: none !important;
-border-radius: 0px !important; }
-
-.top a:link, .top a:visited,
-.bottom a:link, .bottom a:visited,
-th a:link, th a:visited {
-color: #E3EDE5 !important; }
-
-.bottom a:visited, .bottom a {
-text-decoration: none !important;}
- 
-.table .left {
-background: #ABC4B4;
-border-radius: 0px !important; }
-
-.inner-table .left {
-background: #ABC4B4 !important;
+background: rgba(171, 196, 180, 0.75) !important;
 color: #3E4636 !important;
-border-radius: 0px !important;  }
+border: none !important;
+border-radius: 0px !important;
+font-weight: bold; }
+
+.bottom a:visited, .bottom a { text-decoration: none !important; }
+
+.table .left, .inner-table .left {
+background: rgba(227, 237, 229, 0.45) !important;
+color: #3E4636 !important;
+font-weight: bold;
+border-radius: 0px !important; }
 
 .inner-table .right {
-background: #F2F6F2 !important;
-border-radius: 0px !important; 
-color: #3E4636 !important; } 
-
-.right_odd {
-background: none !important; }
-
-/* CUSTOM KING TITLES - Codes made by Pandora #144118  
-Codes may be edited, used in commissions or for personal use. Please do not remove credit.
-Uncomment and replace TEXT to use. Chinese characters work here too.
-Don't use apostrophes (') in the text.
-
-#about > tbody > tr:nth-child(1) > td > div::after {
-    content:', TEXT';
-    font-size:17px; }
-
-#about > tbody > tr:nth-child(1) > td > div::before {
-    content:'TEXT';
-    font-size:17px; }
-*/
-
-/* DEN ICON IMAGE REPLACEMENTS - uncomment and add links to use
-
-img[src$="icon_den_message.png"] { content: url('imagelink') !important; width: 24px !important; }
-img[src$="icon_den_gift.png"] { content: url('imagelink') !important; width: 24px !important; }
-img[src$="icon_den_trade.png"] { content: url('imagelink') !important; width: 24px !important; }
-img[src$="icon_den_wishlist.png"] { content: url('imagelink') !important; width: 24px !important; }
-img[src$="icon_den_viewtrade.png"] { content: url('imagelink') !important; width: 24px !important; }
-img[src$="icon_den_block.png"] { content: url('imagelink') !important; width: 24px !important; }
-img[src$="icon_den_friend.png"] { content: url('imagelink') !important; width: 24px !important; }
-img[src$="donator.png"] { content: url('imagelink') !important; width: 24px !important; }
-*/
-
-/* LION AND USER AVATAR */
-   
-div#lion_image {
-opacity: 1.0;
-border-radius: 50%;
-overflow: hidden; }   
-table#player img {
-opacity: 1.0;
-border-radius: 50%;
-border: 3px solid #ABC4B4; }
-
-/* LIODEN LOGO REPLACER - 192x120 works best. Uncomment and add a link to use.
-
-div.container.main>div:nth-child(1)>nav>div.navbar-header>a>img {
-display: none;}
-div.container.main>div:nth-child(1)>nav>div.navbar-header>a::after {
-content: url('IMG LINK'); }
-*/
- 
-/* TEXT BOXES & BUTTONS */
- 
-input, textarea, select, button.button,
-a.btn.btn-default.button {
-background: #F2F6F2 !important;
-border: 1px solid #ABC4B4 !important;
-border-radius: 0px !important;
+background: none !important;
 color: #3E4636 !important;
-text-shadow: none !important;
-font-family: 'Cormorant Garamond', 'Noto Serif SC', serif; }
-
-button.button:hover, a.btn.btn-default.button:hover {
-background: #808C61 !important;
-color: #E3EDE5 !important; }
- 
-/* CAVE NAMES */
- 
-.cave-grid,
-.mound-grid {
-background: #ABC4B4 !important;
-color: #3E4636 !important;
-border: none !important;
 border-radius: 0px !important; }
 
-/* CAVE & MOUND COVERS */
+.right_odd { background: none !important; }
 
-div.cave-grid>img {
-content: url('https://static.lioden.com/images/items/Amusement/nestingbundle.png')!important;
-width: 75px;
-height: 75px; }
+/* KING AND PLAYER PICTURES
+king stays round, player picture is square */
 
-/* Custom cave/mound covers - uncomment and fill in CAVEID / USERID / MOUNDID and links
+div#lion_image {
+border-radius: 50%;
+overflow: hidden; }
 
-a[href$="CAVEID"]>div.cave-grid>img {
-content: url('IMG LINK')!important;
-width: 258px !important;
-height: auto !important; }
+table#player img {
+border-radius: 0px !important;
+border: 1px solid #3E4636; }
 
-div.cave-grid>img[src$="nestingbanner.png"] {
-content: url('IMG LINK')!important; }
-a[href$="unsorted.php?id=USERID"]>div.cave-grid>img{
-content: url('IMG LINK')!important;
-width: 75px;
-height: 75px;}
-a[href*="lionoverview.php?id=USERID"]>div.cave-grid>img {
-content: url('IMG LINK')!important;
-width: 75px;
-height: 75px; }
+/* TEXT BOXES & BUTTONS */
 
-a[href$="unsorted-beetles.php?id=USERID"] img {
-content:url('IMG LINK') !important;
-width: 100%;
-height: auto; } 
+input, textarea, select, button.button,
+a.btn.btn-default.button {
+background: rgba(227, 237, 229, 0.75) !important;
+border: 1px solid rgba(98, 117, 113, 0.5) !important;
+border-radius: 0px !important;
+color: #3E4636 !important;
+text-shadow: none !important; }
 
-a[href$="mound.php?id=MOUNDID"] img {
-content:url('IMG LINK') !important;
-width: 100%;
-height: auto; } 
-*/
+button.button:hover, a.btn.btn-default.button:hover {
+background: rgba(171, 196, 180, 0.9) !important; }
 
-/* Codes made by Pandora #144118 and Kat .:Red Lion of Voltron:. #94329 
-Codes may be edited, used in commissions or for personal use
-Please do not remove credit
-DYNASTY / ACHIEVEMENT / SHOWCASE BANNERS - uncomment and add links to use
+/* CAVE NAMES */
 
-img[src$="ancestors.jpg"] { content:url('LINK')!important; width:185px!important; }
-img[src$="ancestorsfem.png"] { content:url('LINK')!important; width:185px!important; }
-img[src$="achievements.jpg"] { content:url('LINK')!important; width:185px!important; }
-img[src$="showcase/banner.png"] { content:url('LINK')!important; width:185px!important; }
-*/
+.cave-grid, .mound-grid {
+background: rgba(201, 218, 205, 0.6) !important;
+color: #3E4636 !important;
+border: 1px solid rgba(227, 237, 229, 0.6) !important;
+border-radius: 0px !important; }
 
 /* CAVE COMPATIBILITY */
 
 .featured-lion {
-background: #627571 !important;
-color: #E3EDE5 !important;
+background: rgba(171, 196, 180, 0.75) !important;
+color: #3E4636 !important;
 border: none !important;
 border-radius: 0px !important;
 padding: 0;
@@ -518,197 +320,98 @@ max-width: 640px;
 font-weight: bold;
 font-size: 14px; }
 
-/* cave background - uncomment and add a link to use
-img[src*="cave/default"] {
-content: url('IMG LINK') !important;} */
-
 table#pride.table, table#pride.table a, table#pride.table a:visited {
 color: #3E4636 !important; }
+table#pride.table .xsmall { font-size: 12px !important; }
 
-table#pride.table .xsmall
-{font-size: 12px !important;}
-
-/* cave arrows (50x30px) - uncomment and add links to use
-img[src$="arrow.png"] { content: url('imagelink') !important;}
-img[src$="arrowgrayleft.png"] { content: url('imagelink') !important;} */
-
-/* soft misty texture over featured lion. delete this section if you don't want it. */
-
-div.lion-image-block>img[src$="blank.png"] {
-background-color: #ABC4B4 !important;
-background-image: url("https://www.transparenttextures.com/patterns/rice-paper-2.png") !important;
-filter: opacity(0.2) !important;}
-
-/* CUSTOM FOOTNOTE ICONS - MADE BY PANDORA
-Codes made by Pandora #144118  
-Codes may be edited, used in commissions or for personal use
-Please do not remove credit
-Uncomment and add links to use
-
-img[src$="footmut.png"] { content:url('LINK')!important; width:20px!important; }
-img[src$="foothunt.png"] { content:url('LINK')!important; width:20px!important; }
-img[src$="footheir.png"] { content:url('LINK')!important; width:20px!important; }
-img[src$="footbreed.png"] { content:url('LINK')!important; width:20px!important; }
-img[src$="footx.png"] { content:url('LINK')!important; width:20px!important; }
-img[src$="footbio.png"] { content:url('LINK')!important; width:20px!important; }
-img[src$="footinfertile.png"] { content:url('LINK')!important; width:20px!important; }
-*/
-
-/* badge (inbox notifications & days till heat) */
+/* BADGE */
 
 .badge {
 background: #C9A94E !important;
 color: #3E4636 !important; }
-	
-/* NO LINK UNDERLINE */
-		
-.footer a:link, .footer a:visited, .footer a:active {
-border-bottom: none !important; }
 
-td.bottom a, th a {
-border-bottom: none !important; }
+/* NO LINK UNDERLINES */
 
-/* BOXES - see the box HTML note sent separately; put that HTML in your den description, not here */
+.footer a:link, .footer a:visited, .footer a:active { border-bottom: none !important; }
+td.bottom a, th a { border-bottom: none !important; }
+
+/* BOXES - the HTML for these goes in your den description */
 
 .boxcontainer {
 background: none;
 height: 75px;
 padding: 0px;
 display: block;
-transition: 1s }
-.boxcontainer:hover {
-height: 250px; }
-   
+transition: 1s; }
+.boxcontainer:hover { height: 250px; }
+
 .Box1, .Box2, .Box3 {
-background: #E3EDE5 !important;
+background: rgba(201, 218, 205, 0.6) !important;
 color: #3E4636 !important;
-border: none !important;
-border-top: 3px solid #808C61 !important;
+border: 1px solid rgba(227, 237, 229, 0.6) !important;
 border-radius: 0px !important;
 padding: 5px;
 height: 75px;
 overflow: hidden;
 margin-bottom: 10px;
-transition: 1s }
-
+transition: 1s; }
 .Box1 { float: left; width: 100%; }
-.Box2 { float: right; width: 30%; border-top-color: #2F4560 !important; }
-.Box3 { float: right; width: 65%; border-top-color: #627571 !important; }
-
-.Box1:hover, .Box2:hover, .Box3:hover {
-overflow-y: auto;
-height: 250px; }
-
-/* MOBILE ONLY BOXES 
-Desktop (1200px+) shows Box1/2/3, smaller screens show mobilebox instead. */
+.Box2 { float: right; width: 30%; }
+.Box3 { float: right; width: 65%; }
+.Box1:hover, .Box2:hover, .Box3:hover { overflow-y: auto; height: 250px; }
 
 .mobilebox {
-background: #E3EDE5 !important;
-border: 1px solid #ABC4B4 !important;
+background: rgba(201, 218, 205, 0.6) !important;
+border: 1px solid rgba(227, 237, 229, 0.6) !important;
 border-radius: 0px !important;
 color: #3E4636 !important;
 margin: 10px auto;
 padding: 10px;
 height: 155px;
 width: 80%;
-overflow: auto;
-transition: 1s }
+overflow: auto; }
 
 @media only screen and (max-width: 1199px) {
-	.Box1, .Box2, .Box3, .boxcontainer {
-		display: none !important; }
-	.mobilebox, .mobcontainer {
-		display: block !important; }
-}
+.Box1, .Box2, .Box3, .boxcontainer { display: none !important; }
+.mobilebox, .mobcontainer { display: block !important; } }
 
 @media screen and (min-width: 1200px) {
-	.mobilebox, .mobcontainer {
-		display: none !important; }
-}
+.mobilebox, .mobcontainer { display: none !important; } }
 
 @media only screen and (max-width: 767px) {
-	.container.main .hidden-xs {
-		display: block !important; }
-}
+.container.main .hidden-xs { display: block !important; } }
 
 @media only screen and (min-width: 1200px) {
-	div.quote {
-		width: 790px; }
-}
+div.quote { width: 790px; } }
 
-/* QOL codes
-Codes made by Pandora #144118 and Kat .:Red Lion of Voltron:. #94329 
-Codes may be edited, used in commissions or for personal use
-Please do not remove credit */
+/* ONLINE / OFFLINE DOT - small dot next to your name
+Codes by Pandora #144118 and Kat #94329, edited. Please do not remove credit */
 
-/* MEMBER ONLINE */
 .member-online {
-background: #808C61;
-content:url('none')!important;
-border-radius: 0px;
-width:40px!important;
-height:40px;
-margin:-10px;
-margin-left:10px; }
-	
-/* MEMBER OFFLINE */
+background: #6FA36A;
+border-radius: 50%;
+width: 9px !important;
+height: 9px;
+margin: 0 6px 2px 0; }
+
 .member-offline {
-background: #787A65;
-content:url('none')!important;
-border-radius: 0px;
-width:40px!important;
-height:40px;
-margin:-10px;
-margin-left:10px;
-filter: saturate(0%); }
+background: #8A8F86;
+border-radius: 50%;
+width: 9px !important;
+height: 9px;
+margin: 0 6px 2px 0; }
 
-/* CURRENCY ICONS - also by kat and pandora 
-Uncomment and add links to use
+/* CREDIT - no touchy */
 
-img[src$="gold.png"] { content:url('LINK')!important; width:20px!important; }
-img[src$="silver.png"] { content:url('LINK')!important; width:20px!important; }
-img[src$="dermestid.png"] { content:url('LINK')!important; width:20px!important; }
-img[src$="heartshell.png"] { content:url('LINK')!important; width:20px!important; }
-img[src$="beetlerhino.png"] { content:url('LINK')!important; width:20px!important; }
-img[src$="easteregg.png"] { content:url('LINK')!important; width:20px!important; }
-img[src$="beetlemant.png"] { content:url('LINK')!important; width:20px!important; }
-img[src$="khepri.png"] { content:url('LINK')!important; width:20px!important; }
-img[src$="shard.png"] { content:url('LINK')!important; width:20px!important; }
-img[src$="axion.png"] { content:url('LINK')!important; width:20px!important; }
-img[src$="beetlecarrion.png"] { content:url('LINK')!important; width:20px!important; }
-img[src$="bone.png"] { content:url('LINK')!important; width:20px!important; }
-img[src$="beetlejewel.png"] { content:url('LINK')!important; width:20px!important; }
-img[src$="eldritch.png"] { content:url('LINK')!important; width:20px!important; }
-img[src$="beetleblood.png"] { content:url('LINK')!important; width:20px!important; }
-img[src$="nephelinefeather.png"] { content:url('LINK')!important; width:20px!important; }
-img[src$="demonicscale.png"] { content:url('LINK')!important; width:20px!important; }
-img[src$="scarabbeetle.png"] { content:url('LINK')!important; width:20px!important; }
-img[src$="stinkbug.png"] { content:url('LINK')!important; width:20px!important; }
-img[src$="icon_doubloon.png"] { content:url('LINK')!important; width:20px!important; }
-*/
-	
-/* CUSTOM CURSOR - paste code from https://www.cursors-4u.com/ here, before the credit */
-	
-/* CREDIT - no touchy this part */
- 
 .breadcrumb::after {
 content: "css template by katie (#106445) & jester (#187561)";
-color: #ABC4B4;
+color: #627571;
 position: absolute;
 right: 13%;
 z-index: 100; }
-		
-@media only screen and (max-width: 1199px) and (min-width: 992px)  {
-	.breadcrumb::after {
-		right: 20%; }
-}
 
-@media only screen and (max-width: 991px) and (min-width: 768px)  {
-	.breadcrumb::after {
-		right: 20%; }
-}
+@media only screen and (max-width: 1199px) and (min-width: 768px) {
+.breadcrumb::after { right: 20%; } }
 
 @media only screen and (max-width: 767px) {
-	.breadcrumb::after {
-		right: 22%; }
-}
+.breadcrumb::after { right: 22%; } }
