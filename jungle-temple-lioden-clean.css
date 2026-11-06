@@ -37,7 +37,7 @@ border-radius - the roundness of the borders, for circular elements, set to 50%
 box-shadow - a shadow behind the element itself. you usually want this set to none.
 
 =========================================================
-THEME: Heron's Rest - clean pale sage glass over a blurred mountain temple
+THEME: Heron's Rest - charcoal linen panel over a bright blurred mountain temple
 (山中古寺 · 鷺)
 
 HOW TO TWEAK
@@ -58,42 +58,49 @@ and 'Noto Serif SC' for 'Noto Serif TC' in --font below. */
 
 :root {
 /* text */
---ink: #3E4636;          /* main text - deep earth */
---ink-head: #4F5A49;     /* headings */
---ink-soft: #6B7B6F;     /* timestamps, muted text */
---ink-light: #F2EFE2;    /* text on dark accents */
---link: #3D5650;         /* links - moss */
---link-hover: #7A6A3E;   /* link hover - bark */
+--ink: #C9CAC4;          /* main text - soft linen gray */
+--ink-head: #D5D4CD;     /* headings */
+--ink-soft: #8F918B;     /* timestamps, muted text */
+--ink-light: #DAD9D2;    /* text on dark accents */
+--link: #AEB5BA;         /* links - pale slate */
+--link-hover: #9FB2C2;   /* link hover - pale heron blue */
 
 /* glass layers - warm stone and lichen, only the opacity changes */
---glass-page: rgba(238, 245, 240, 0.70);   /* main panel behind everything */
---glass: rgba(244, 249, 245, 0.82);        /* panels, tables, boxes */
---glass-band: rgba(214, 230, 218, 0.93);   /* header bars and table headers */
---glass-cell: rgba(226, 238, 229, 0.80);   /* label cells, inputs */
---edge: rgba(150, 178, 158, 0.75);         /* thin earthy outlines */
+--glass-page: rgba(46, 48, 49, 0.90);   /* main charcoal panel behind everything */
+--glass: rgba(58, 60, 61, 0.92);        /* panels, tables, boxes */
+--glass-band: rgba(74, 76, 77, 0.96);   /* header bars and table headers */
+--glass-cell: rgba(66, 69, 72, 0.90);   /* label cells, inputs */
+--label: rgba(72, 84, 70, 0.88);         /* label boxes - Level, Stats, etc. - mellow moss */
+--edge: rgba(120, 122, 118, 0.45);       /* thin soft outlines */
 --radius: 3px;                             /* corner rounding, 0px for sharp */
---input-edge: rgba(150, 178, 158, 0.90);   /* input outlines */
---solid: #F4F9F5;                          /* for popups that need to be solid */
+--input-edge: rgba(122, 124, 120, 0.60); /* input outlines */
+--solid: #2E3031;                        /* for popups that need to be solid */
 
 /* accents */
---moss: #808C61;      /* exp, achievements, default bars */
---gold: #C9A94E;      /* energy, badges, pings */
---brown: #8A6A4A;     /* hunger, warnings, delete buttons */
---warn: rgba(201, 169, 120, 0.35);
---ping: rgba(184, 150, 62, 0.25);
---online: #6FA36A;
---offline: #8A8576;
+--moss: #6E7760;      /* scrollbar and small moss accents */
+--gold: #667C90;      /* energy, badges, pings - mellow heron blue */
+--brown: #7A6352;     /* hunger, warnings, delete buttons - soft clay */
+--bar-exp: #857A5C;   /* EXP and achievements - muted stone ochre */
+--bar-imp: #5F7A76;   /* IMP and other bars - dusty slate teal */
+--warn: rgba(122, 99, 82, 0.40);
+--ping: rgba(102, 124, 144, 0.25);
+--online: #7F9A6E;
+--offline: #6E706C;
 
 /* background */
 --bg-base: #A9BDAE;
 --bg-image: url('https://i.pinimg.com/1200x/04/39/df/0439df5071b80948920a2280aed00583.jpg');
 --bg-blur: 5px;       /* raise for softer, 0px for none */
 --bg-dim: 1.12;       /* 1 = original brightness, lower = darker, higher = brighter */
---bg-haze: rgba(240, 246, 241, 0.30);   /* warm mist over the photo, 0 for none */
+--bg-haze: rgba(0, 0, 0, 0);   /* mist over the photo - set e.g. rgba(240, 246, 241, 0.30) for a pale haze */
 
 /* logo and mound images */
 --logo: url('https://i.imgur.com/ffr77m8.png');   /* test logo from vertigoat #114297 - swap for your own */
 --mound: url('https://i.pinimg.com/736x/8c/cf/cd/8ccfcd8a70fb5bb4d702e454187ba42b.jpg');
+--logo-left: -95px;   /* how far the logo sits to the left */
+--logo-up: -4px;      /* how far the logo drops below the menu bar's bottom edge */
+--logo-room: 190px;   /* space kept clear for the logo before the menu starts */
+--logo-height: 135px; /* logo size - keep it under the gap between the top bar and menu */
 
 --font: Georgia, 'Times New Roman', 'Noto Serif SC', serif;
 }
@@ -143,7 +150,7 @@ font-size: 72px;
 font-weight: normal;
 line-height: 1.1;
 text-align: center !important;
-margin: 28px 0 !important;   /* equal space above and below, with or without the alert */
+margin: 24px 0 18px !important;   /* space above and below the den title */
 padding: 0 !important; }
 
 h2 {
@@ -298,11 +305,11 @@ table#player.table div.xlarge { margin-top: 10px !important; }
 background: var(--glass-cell);
 color: var(--ink) !important;
 border-radius: var(--radius) !important; }
-.progress-bar { background: var(--moss) !important; border-radius: var(--radius) !important; }
-/* ENERGY */ .progress-bar-warning { background: var(--gold) !important; color: var(--ink) !important; }
+.progress-bar { background: var(--bar-imp) !important; border-radius: var(--radius) !important; }
+/* ENERGY */ .progress-bar-warning { background: var(--gold) !important; color: var(--ink-light) !important; }
 /* HUNGER */ .progress-bar-danger { background: var(--brown) !important; color: var(--ink-light) !important; }
-/* EXP + ACHIEVEMENTS */ .progress-bar-success { background: var(--moss) !important; color: var(--ink-light) !important; }
-.progress div { color: var(--ink) !important; }
+/* EXP + ACHIEVEMENTS */ .progress-bar-success { background: var(--bar-exp) !important; color: var(--ink-light) !important; }
+.progress div { color: var(--ink) !important; text-shadow: 0 1px 2px rgba(0, 0, 0, 0.7); }
 
 /* LION INFO
 .table - the background behind your tables
@@ -332,7 +339,7 @@ font-weight: bold; }
 .inner-table .right - the values next to them */
 
 .table .left, .inner-table .left {
-background: var(--glass-cell) !important;
+background: var(--label) !important;
 color: var(--ink) !important;
 font-weight: bold;
 border-radius: var(--radius) !important; }
@@ -413,6 +420,18 @@ background-color: var(--glass) !important; }
 .s-chat-message:nth-child(odd) { background: var(--glass) !important; border: none !important; }
 .s-chat-message_timestamp { color: var(--ink-soft) !important; }
 
+/* CHAT SPACING - room inside and between messages */
+div#chatMessageContainer { padding: 6px !important; }
+.s-chat-message {
+padding: 8px 12px !important;
+margin-bottom: 4px !important;
+border-radius: var(--radius) !important; }
+.s-chat-message__pinned {
+padding: 8px 12px !important;
+margin-bottom: 6px !important; }
+button#label_currentChannel { margin-bottom: 6px !important; }
+#chatMessageList { padding-right: 4px; }
+
 /* Emote List - solid so it's readable over chat.
 Keep border-top on the ::before as none, otherwise you'll get a weird gap */
 
@@ -445,7 +464,7 @@ html.nolayout { background: none !important; }
 
 .badge {
 background: var(--gold) !important;
-color: var(--ink) !important; }
+color: var(--ink-light) !important; }
 
 /* NO LINK UNDERLINE - removes link underlines at the bottom of the page
 and from edit your details */
@@ -608,6 +627,40 @@ overflow: auto; }
 
 div.container.main>div:nth-child(1)>nav>div.navbar-header>a>img {
 content: var(--logo) !important; }
+
+/* LOGO PLACEMENT - like the reference: the menu bar stays slim and the logo
+sits at the far left, rising up out of it into the space under the top bar.
+Nudge --logo-left (more negative = further left) and --logo-up to adjust. */
+
+.navbar {
+position: relative;
+min-height: 56px !important;
+overflow: visible !important; }
+
+.navbar-header {
+position: relative;
+width: var(--logo-room);
+height: 56px; }
+
+div.container.main>div:nth-child(1)>nav>div.navbar-header>a>img {
+position: absolute;
+left: var(--logo-left);
+bottom: var(--logo-up);
+height: var(--logo-height) !important;
+width: auto !important;
+max-width: none !important;
+z-index: 5; }
+
+/* menu items vertically centred in the slim bar */
+.navbar-nav > li > a {
+padding-top: 18px !important;
+padding-bottom: 18px !important; }
+
+@media only screen and (max-width: 767px) {
+.navbar-header { width: auto; height: auto; }
+div.container.main>div:nth-child(1)>nav>div.navbar-header>a>img {
+position: static;
+height: 70px; } }
 
 /* BEETLE MOUND IMAGE - shows --mound from the top of the file, cropped to fit the 130x80 slot
 from vertigoat #114297 */
