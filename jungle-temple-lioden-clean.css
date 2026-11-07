@@ -708,12 +708,15 @@ padding-top: 80px;
 padding-right: 130px;
 box-sizing: content-box; }
 
-/* REFER A FRIEND / VIEW YOUR WISHLIST ICONS - hidden.
-To swap in your own sprite later, replace "display: none !important;" with:
-content: url('YOUR IMAGE LINK') !important; width: 24px !important; height: auto !important; */
+/* DEN ICON SPRITES - hidden.
+Removes the little icons next to Message, Send Gift, Create Trade, View Wishlist,
+View Trades, Block Member, Add Friend, Refer a Friend and the donator badge.
+To swap one back in as your own sprite later, add a line like this below:
+img[src$="icon_den_message.png"] { display: inline !important; content: url('YOUR IMAGE LINK') !important; width: 24px !important; } */
 
-table#player a[href*="refer" i] img, table#player a[href*="wishlist" i] img,
-img[src*="refer" i], img[src*="wishlist" i] {
+img[src*="icon_den" i], img[src$="donator.png"],
+img[src*="refer" i], img[src*="wishlist" i],
+table#player a[href*="refer" i] img, table#player a[href*="wishlist" i] img {
 display: none !important; }
 
 /* CAVE BUTTONS - TEMPORARY TONE-DOWN
