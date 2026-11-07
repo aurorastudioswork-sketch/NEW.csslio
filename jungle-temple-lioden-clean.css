@@ -562,6 +562,7 @@ margin: 0 6px 2px 0; }
 from vertigoat #114297 */
 
 input.floatright, input.floatright:hover {
+margin-left: 16px !important;   /* gap between the credit text and the button */
 background: var(--glass-band) !important;
 border: none !important;
 border-radius: var(--radius) !important;
@@ -915,6 +916,7 @@ DO IT BELOW THIS POINT BUT BEFORE THE CREDIT */
 .breadcrumb::after {
 content: "css template by katie (#106445) & jester (#187561)";
 color: var(--ink-soft);
+padding-right: 14px;   /* gap before the Bookmark button */
 position: absolute;
 right: 13%;
 z-index: 100; }
