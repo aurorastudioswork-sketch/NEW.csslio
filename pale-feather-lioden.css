@@ -104,7 +104,7 @@ and 'Noto Serif SC' for 'Noto Serif TC' in --font below. */
 
 /* logo and mound images */
 --logo: url('https://i.imgur.com/ffr77m8.png');   /* test logo from vertigoat #114297 - swap for your own */
---mound: url('https://i.pinimg.com/736x/0b/ea/24/0bea244e4abaac9848cc7dae86217a5a.jpg');   /* beetle mound - autumn silver grass */
+--mound: url('https://i.pinimg.com/1200x/a6/4b/a9/a64ba9130ec4d267c60ef8deae14d7fb.jpg');   /* beetle mounds - same silver-grass sunset as the title banner */
 --logo-left: -95px;   /* how far the logo sits to the left */
 --logo-up: 0px;       /* raise to lift the logo, negative to drop it below the menu bar */
 --logo-room: 260px;   /* space kept clear for the logo before the menu starts */
@@ -706,39 +706,28 @@ div.container.main>div:nth-child(1)>nav>div.navbar-header>a>img {
 position: static !important;
 height: 70px !important; } }
 
-/* BEETLE MOUND IMAGE - shows --mound from the top of the file, cropped to fit the 130x80 slot
-from vertigoat #114297 */
+/* BEETLE MOUNDS - the silver-grass banner photo fills the top of each mound box
+like the cave banners above, faded slightly so they sit with the rest of the page */
+
+.mound-grid {
+padding: 8px 8px 10px !important;
+text-align: center; }
 
 .mound-grid img {
-background: var(--mound) center center / cover no-repeat !important;
-width: 0 !important;
+display: block !important;
+width: 100% !important;
 height: 0 !important;
-padding-top: 80px;
-padding-right: 130px;
-box-sizing: content-box; }
+padding-top: 92px !important;
+box-sizing: border-box !important;
+margin: 0 0 8px !important;
+background: linear-gradient(rgba(60, 48, 34, 0.05), rgba(60, 48, 34, 0.22)), var(--mound) center 72% / cover no-repeat !important;
+filter: saturate(0.85) sepia(0.12);
+border-radius: 2px; }
 
-/* DEN ICON SPRITES - hidden.
-Removes the little icons next to Message, Send Gift, Create Trade, View Wishlist,
-View Trades, Block Member, Add Friend, Refer a Friend and the donator badge.
-To swap one back in as your own sprite later, add a line like this below:
-img[src$="icon_den_message.png"] { display: inline !important; content: url('YOUR IMAGE LINK') !important; width: 24px !important; } */
-
-img[src*="icon_den" i], img[src$="donator.png"],
-img[src*="refer" i], img[src*="wishlist" i],
-table#player a[href*="refer" i] img, table#player a[href*="wishlist" i] img {
-display: none !important; }
-
-/* CAVE BUTTONS - TEMPORARY TONE-DOWN
-Mutes Lioden's default nesting / unsorted / pride overview pictures (not the empty cave slots) so they sit
-quietly in the charcoal theme until you pick replacements.
-Delete this block once you add your own images in the CAVE & MOUND COVERS section. */
-
-a[href*="unsorted" i] div.cave-grid > img,
-a[href*="overview" i] div.cave-grid > img,
-a[href*="nest" i] div.cave-grid > img,
-a[href*="pregnan" i] div.cave-grid > img,
-div.cave-grid > img[src*="nest" i] {
-filter: sepia(0.25) saturate(0.55) brightness(1.06); }
+/* each mound a little different - a slightly different slice of the hills */
+.mound-grid:nth-of-type(1) img, a:nth-of-type(1) > .mound-grid img { background-position: center, 30% 70% !important; }
+a:nth-of-type(2) > .mound-grid img { background-position: center, 70% 78% !important; }
+a:nth-of-type(3) > .mound-grid img { background-position: center, 50% 64% !important; }
 
 /* =========================================================
    OPTIONAL SECTIONS
