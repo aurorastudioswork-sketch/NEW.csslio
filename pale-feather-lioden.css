@@ -91,14 +91,16 @@ and 'Noto Serif SC' for 'Noto Serif TC' in --font below. */
 
 /* background */
 --bg-base: #B2AEAA;
---bg-image: url('https://aurorastudioswork-sketch.github.io/NEW.csslio/feather-bg.jpg');
---bg-blur: 0px;       /* raise for softer, 0px for none */
---bg-dim: 0.95;       /* 1 = original brightness, lower = darker, higher = brighter */
---bg-haze: rgba(0, 0, 0, 0);   /* mist over the photo - set e.g. rgba(240, 246, 241, 0.30) for a pale haze */
+--bg-image: url('https://i.pinimg.com/736x/5a/75/f9/5a75f9ef56e2a6003829748bca5dceef.jpg');
+/* alternative background - the dunes and lighthouse, swap it in for the line above:
+--bg-image: url('https://i.pinimg.com/736x/b8/e0/b4/b8e0b4075942b56134ab3380c16c0769.jpg'); */
+--bg-blur: 6px;       /* raise for softer, 0px for none */
+--bg-dim: 1;       /* 1 = original brightness, lower = darker, higher = brighter */
+--bg-haze: rgba(238, 231, 220, 0.45);   /* warm haze over the background - raise the last number for more */
 
 /* banner images */
 --banner: url('https://aurorastudioswork-sketch.github.io/NEW.csslio/pampas-banner.jpg');   /* den title banner */
---menu-image: url('https://aurorastudioswork-sketch.github.io/NEW.csslio/menu-lighthouse.jpg');   /* lighthouse at the right end of the menu */
+--menu-image: url('https://i.pinimg.com/736x/b8/e0/b4/b8e0b4075942b56134ab3380c16c0769.jpg');   /* lighthouse at the right end of the menu */
 
 /* logo and mound images */
 --logo: url('https://i.imgur.com/ffr77m8.png');   /* test logo from vertigoat #114297 - swap for your own */
@@ -947,10 +949,21 @@ color: var(--ink-light) !important; }
 .navbar li a:hover, .topbar a:hover { color: #E6D3A8 !important; background: none !important; }
 button.button:hover, a.btn.btn-default.button:hover { background: var(--glass-band) !important; color: var(--ink-light) !important; }
 
-/* the lighthouse at the right end of the menu */
-.navbar {
-background: linear-gradient(90deg, rgba(110, 99, 82, 0.97) 0, rgba(110, 99, 82, 0.97) calc(100% - 340px), rgba(110, 99, 82, 0.15) 100%),
-var(--menu-image) right center / auto 100% no-repeat, rgb(110, 99, 82) !important; }
+/* the lighthouse fading in at the right end of the menu (mirrored so it faces in) */
+.navbar { background: rgb(110, 99, 82) !important; }
+.navbar::before {
+content: "";
+position: absolute;
+top: 0; right: 0; bottom: 0;
+width: 360px;
+background: var(--menu-image) center 46% / cover no-repeat;
+transform: scaleX(-1);
+-webkit-mask-image: linear-gradient(to left, transparent 0%, #000 75%);
+mask-image: linear-gradient(to left, transparent 0%, #000 75%);
+opacity: 0.85;
+pointer-events: none;
+z-index: 0; }
+.navbar .navbar-collapse, .navbar .navbar-nav { position: relative; z-index: 1; }
 .topbar { background: rgba(110, 99, 82, 0.94) !important; }
 
 /* soft warm shadows */
