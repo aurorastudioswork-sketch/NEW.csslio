@@ -738,8 +738,14 @@ img[src$="icon_den_message.png"] { display: inline !important; content: url('YOU
 img[src*="icon_den" i], img[src$="donator.png"],
 img[src*="refer" i], img[src*="wishlist" i],
 table#player a[href*="refer" i] img, table#player a[href*="wishlist" i] img,
-table#player a img:not(.member-online):not(.member-offline) {
+table#player a img:not(.member-online):not(.member-offline),
+table#player img:has(+ a), table#player img:has(+ b + a) {
 display: none !important; }
+
+/* PROFILE PICTURE - centred top to bottom in the player box */
+table#player td { vertical-align: middle !important; }
+table#player td img[style*="float" i], table#player td > img:last-child:not(.member-online) {
+margin-top: auto !important; margin-bottom: auto !important; }
 
 /* CAVE BUTTONS - TEMPORARY TONE-DOWN
 Mutes Lioden's default nesting / unsorted / pride overview pictures (not the empty cave slots) so they sit
