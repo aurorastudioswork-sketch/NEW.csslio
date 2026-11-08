@@ -729,6 +729,30 @@ border-radius: 2px; }
 a:nth-of-type(2) > .mound-grid img { background-position: center, 70% 78% !important; }
 a:nth-of-type(3) > .mound-grid img { background-position: center, 50% 64% !important; }
 
+/* DEN ICON SPRITES - hidden.
+Removes the little icons next to Message, Send Gift, Create Trade, View Wishlist,
+View Trades, Block Member, Add Friend, Refer a Friend and the donator badge.
+To swap one back in as your own sprite later, add a line like this below:
+img[src$="icon_den_message.png"] { display: inline !important; content: url('YOUR IMAGE LINK') !important; width: 24px !important; } */
+
+img[src*="icon_den" i], img[src$="donator.png"],
+img[src*="refer" i], img[src*="wishlist" i],
+table#player a[href*="refer" i] img, table#player a[href*="wishlist" i] img,
+table#player a img:not(.member-online):not(.member-offline) {
+display: none !important; }
+
+/* CAVE BUTTONS - TEMPORARY TONE-DOWN
+Mutes Lioden's default nesting / unsorted / pride overview pictures (not the empty cave slots) so they sit
+quietly in the charcoal theme until you pick replacements.
+Delete this block once you add your own images in the CAVE & MOUND COVERS section. */
+
+a[href*="unsorted" i] div.cave-grid > img,
+a[href*="overview" i] div.cave-grid > img,
+a[href*="nest" i] div.cave-grid > img,
+a[href*="pregnan" i] div.cave-grid > img,
+div.cave-grid > img[src*="nest" i] {
+filter: sepia(0.25) saturate(0.55) brightness(1.06); }
+
 /* =========================================================
    OPTIONAL SECTIONS
    Everything below is switched off. Delete the comment markers

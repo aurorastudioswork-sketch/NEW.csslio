@@ -717,7 +717,8 @@ img[src$="icon_den_message.png"] { display: inline !important; content: url('YOU
 
 img[src*="icon_den" i], img[src$="donator.png"],
 img[src*="refer" i], img[src*="wishlist" i],
-table#player a[href*="refer" i] img, table#player a[href*="wishlist" i] img {
+table#player a[href*="refer" i] img, table#player a[href*="wishlist" i] img,
+table#player a img:not(.member-online):not(.member-offline) {
 display: none !important; }
 
 /* CAVE BUTTONS - TEMPORARY TONE-DOWN
@@ -916,7 +917,7 @@ DO IT BELOW THIS POINT BUT BEFORE THE CREDIT */
 .breadcrumb::after {
 content: "css template by katie (#106445) & jester (#187561)";
 color: var(--ink-soft);
-padding-right: 14px;   /* gap before the Bookmark button */
+padding-right: 12px;   /* gap before the Bookmark button */
 position: absolute;
 right: 13%;
 z-index: 100; }
