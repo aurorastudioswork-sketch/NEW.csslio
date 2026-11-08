@@ -37,9 +37,9 @@ border-radius - the roundness of the borders, for circular elements, set to 50%
 box-shadow - a shadow behind the element itself. you usually want this set to none.
 
 =========================================================
-THEME: Pale Feather - hazy dusk over silver grass and dunes, a backlit feather behind.
-Muted dune-taupe bands, cream panels, sea-slate and dune-gold accents.
-The warm daylight companion to Heron's Rest. Made for 林霏.
+THEME: Pale Feather - dusk over silver grass and dunes, a hazed feather behind.
+Warm stone panels, dune-brown bands, sea-slate and dune-gold accents -
+halfway to Heron's Rest, leaning brown. Made for 林霏.
 (山中古寺 · 鷺)
 
 HOW TO TWEAK
@@ -60,51 +60,51 @@ and 'Noto Serif SC' for 'Noto Serif TC' in --font below. */
 
 :root {
 /* text */
---ink: #3B362E;          /* main text - dark earth */
---ink-head: #433B31;     /* headings */
---ink-soft: #857A6A;     /* timestamps, muted text */
---ink-light: #F1EADD;    /* text on dark accents */
---link: #56676E;         /* links - sea slate */
---link-hover: #9A7B45;   /* link hover - dune gold */
+--ink: #2B2721;          /* main text - dark earth */
+--ink-head: #2E2922;     /* headings */
+--ink-soft: #574F43;     /* timestamps, muted text */
+--ink-light: #EFE6D6;    /* text on dark accents */
+--link: #2C3B42;         /* links - sea slate */
+--link-hover: #6E4E22;   /* link hover - dune gold */
 
 /* glass layers - warm stone and lichen, only the opacity changes */
---glass-page: rgba(232, 224, 212, 0.55);   /* main panel behind everything */
---glass: rgba(242, 236, 227, 0.88);        /* panels, tables, boxes */
---glass-band: rgba(110, 99, 82, 0.94);   /* header bars and table headers */
---glass-cell: rgba(232, 225, 213, 0.88);   /* label cells, inputs */
---label: rgba(204, 203, 184, 0.88);         /* label boxes - Level, Stats, etc. - dune grass */
---edge: rgba(95, 82, 61, 0.26);       /* thin soft outlines */
+--glass-page: rgba(118, 109, 96, 0.80);   /* main panel behind everything */
+--glass: rgba(166, 157, 143, 0.94);        /* panels, tables, boxes */
+--glass-band: rgba(96, 84, 68, 0.96);   /* header bars and table headers */
+--glass-cell: rgba(176, 168, 154, 0.92);   /* label cells, inputs */
+--label: rgba(140, 140, 114, 0.92);         /* label boxes - Level, Stats, etc. - dune grass */
+--edge: rgba(64, 52, 38, 0.38);       /* thin soft outlines */
 --radius: 3px;                             /* corner rounding, 0px for sharp */
---input-edge: rgba(95, 82, 61, 0.40); /* input outlines */
---solid: #F2ECE3;                        /* for popups that need to be solid */
+--input-edge: rgba(64, 52, 38, 0.50); /* input outlines */
+--solid: #A69D8F;                        /* for popups that need to be solid */
 
 /* accents */
---moss: #A3A88E;      /* scrollbar and small accents - dune grass */
---gold: #8E9EA4;      /* energy, badges, pings - sea slate */
---brown: #B4917A;     /* hunger, warnings, delete buttons - clay */
---bar-exp: #BBA270;   /* EXP and achievements - dune gold */
---bar-imp: #A3A88E;   /* IMP and other bars - dune grass */
---warn: rgba(180, 145, 122, 0.20);
---ping: rgba(142, 158, 164, 0.20);
---online: #8E9A6E;
---offline: #A39583;
+--moss: #7E8566;      /* scrollbar and small accents - dune grass */
+--gold: #7A8D9A;      /* energy, badges, pings - sea slate */
+--brown: #9C7862;     /* hunger, warnings, delete buttons - clay */
+--bar-exp: #A68E62;   /* EXP and achievements - dune gold */
+--bar-imp: #7F9180;   /* IMP and other bars - dune grass */
+--warn: rgba(156, 120, 98, 0.30);
+--ping: rgba(122, 141, 154, 0.28);
+--online: #7E9A62;
+--offline: #8A8070;
 
 /* background */
---bg-base: #B2AEAA;
+--bg-base: #7E7466;
 --bg-image: url('https://i.pinimg.com/736x/5a/75/f9/5a75f9ef56e2a6003829748bca5dceef.jpg');
 /* alternative background - the dunes and lighthouse, swap it in for the line above:
 --bg-image: url('https://i.pinimg.com/736x/b8/e0/b4/b8e0b4075942b56134ab3380c16c0769.jpg'); */
 --bg-blur: 6px;       /* raise for softer, 0px for none */
---bg-dim: 1;       /* 1 = original brightness, lower = darker, higher = brighter */
---bg-haze: rgba(238, 231, 220, 0.45);   /* warm haze over the background - raise the last number for more */
+--bg-dim: 0.82;       /* 1 = original brightness, lower = darker, higher = brighter */
+--bg-haze: rgba(150, 132, 108, 0.40);   /* warm umber haze over the background - raise the last number for more */
 
 /* banner images */
---banner: url('https://aurorastudioswork-sketch.github.io/NEW.csslio/pampas-banner.jpg');   /* den title banner */
+--banner: url('https://i.pinimg.com/1200x/a6/4b/a9/a64ba9130ec4d267c60ef8deae14d7fb.jpg');   /* den title banner - hazy silver-grass sunset */
 --menu-image: url('https://i.pinimg.com/736x/b8/e0/b4/b8e0b4075942b56134ab3380c16c0769.jpg');   /* lighthouse at the right end of the menu */
 
 /* logo and mound images */
 --logo: url('https://i.imgur.com/ffr77m8.png');   /* test logo from vertigoat #114297 - swap for your own */
---mound: url('https://aurorastudioswork-sketch.github.io/NEW.csslio/pampas-banner.jpg');
+--mound: url('https://i.pinimg.com/736x/0b/ea/24/0bea244e4abaac9848cc7dae86217a5a.jpg');   /* beetle mound - autumn silver grass */
 --logo-left: -95px;   /* how far the logo sits to the left */
 --logo-up: 0px;       /* raise to lift the logo, negative to drop it below the menu bar */
 --logo-room: 260px;   /* space kept clear for the logo before the menu starts */
@@ -926,7 +926,7 @@ DO IT BELOW THIS POINT BUT BEFORE THE CREDIT */
 
 /* den title on the hazy silver-grass banner */
 h1 {
-background: linear-gradient(rgba(60, 50, 38, 0.10), rgba(50, 42, 32, 0.45)), var(--banner) center 40% / cover no-repeat !important;
+background: linear-gradient(rgba(60, 50, 38, 0.10), rgba(50, 42, 32, 0.45)), var(--banner) center 45% / cover no-repeat !important;
 color: #F6EFE2 !important;
 text-align: center !important;
 font-weight: normal;
@@ -950,7 +950,7 @@ color: var(--ink-light) !important; }
 button.button:hover, a.btn.btn-default.button:hover { background: var(--glass-band) !important; color: var(--ink-light) !important; }
 
 /* the lighthouse fading in at the right end of the menu (mirrored so it faces in) */
-.navbar { background: rgb(110, 99, 82) !important; }
+.navbar { background: rgb(96, 84, 68) !important; }
 .navbar::before {
 content: "";
 position: absolute;
@@ -964,14 +964,27 @@ opacity: 0.85;
 pointer-events: none;
 z-index: 0; }
 .navbar .navbar-collapse, .navbar .navbar-nav { position: relative; z-index: 1; }
-.topbar { background: rgba(110, 99, 82, 0.94) !important; }
+.topbar { background: rgba(96, 84, 68, 0.96) !important; }
 
-/* soft warm shadows */
-.panel, .feature, div.left, .cave-grid, .mound-grid, .table, .breadcrumb, div#commentBox {
-box-shadow: 0 4px 16px rgba(70, 56, 40, 0.12) !important; }
+/* panels lift off the darker page: a soft shadow and a faint light top edge */
+.panel, .feature, div.left, .cave-grid, .mound-grid, .table, .breadcrumb, div#commentBox, .alert {
+border: 1px solid var(--edge) !important;
+box-shadow: inset 0 1px 0 rgba(255, 246, 230, 0.22), 0 4px 14px rgba(40, 30, 18, 0.22) !important; }
 
-/* bar labels in dark ink */
-.progress div { color: var(--ink) !important; text-shadow: 0 0 3px rgba(242, 236, 227, 0.7) !important; }
+/* bars: darker empty track so they read against the stone */
+.progress { background: rgba(48, 38, 26, 0.22) !important; }
+.progress div { color: var(--ink) !important; text-shadow: none !important; }
+
+/* links get an underline so they stay clear on the mid-tone panels */
+.panel a:link, .table a:link, .alert a:link, .s-chat-message a:link { text-decoration: underline; text-decoration-color: rgba(44, 59, 66, 0.45); }
+
+/* chat messages alternate between two stone shades */
+.s-chat-message:nth-child(even) { background: var(--glass-cell) !important; }
+.s-chat-message:nth-child(odd) { background: rgba(156, 147, 133, 0.92) !important; }
+
+/* text that sits straight on the page (headings, credit) */
+.sidebar h3, .breadcrumb::after { color: #F1E8D8 !important; text-shadow: 0 1px 6px rgba(40, 30, 18, 0.45); }
+.breadcrumb::after { color: #5A5143 !important; text-shadow: none; }
 
 /* CREDIT - no touchy this part, the code will work just fine */
 
